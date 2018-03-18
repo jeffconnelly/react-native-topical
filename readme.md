@@ -15,3 +15,7 @@ React-Native App with source code for the content covered during the flex week.
 
 It's been configured [React Native Developer Tools](https://github.com/jhen0409/react-native-debugger)
 so you are able to log redux state better. 
+
+### Guides
+
+The order of the sessions will be guided by the [presentation](https://docs.google.com/presentation/d/1BL6IE7raoOIRTML0p7aW9jKL1XqcMRPKOKOaA0GftQ8/edit?usp=sharing)
