@@ -24,6 +24,7 @@ class AppComponent extends Component<Props> {
   render () {
     const {counterValue} = this.props
     return <View style={styles.container}>
+        <Text>Topical</Text>
         <Text style={styles.counterValue}>
           Counter value is {counterValue}
         </Text>

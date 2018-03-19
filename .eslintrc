@@ -1,6 +1,6 @@
 {
   "extends": "airbnb",
-  "parser": "babel-eslint",
+  // "parser": "babel-eslint",
   // Map from global var to bool specifying if it can be redefined
   "globals": {
     "__DEV__": true,
