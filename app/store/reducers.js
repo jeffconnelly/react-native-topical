@@ -12,7 +12,7 @@ const initialState = {
 export function newsReducer (state=initialState, action) {
   switch (action.type) {
     case FETCH_ARTICLES_SUCCESS:
-    // console.log(action.articles.articles);
+    console.log(action.articles.articles);
     // console.log(state.articles);
       return { 
         ...state, 

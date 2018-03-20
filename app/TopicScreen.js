@@ -13,12 +13,13 @@ import {store} from '%store'
 
 
 export class TopicScreen extends React.Component {
-  componentDidMount() {
+  componentDidUpdate() {
     // console.log('mounted!');
-    console.log(this.props.articles);
+    console.log('mount info is:', this.props.articles);
   }
 
   render() {
+    console.log('render info is:', this.props.articles);
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={() => this.props.navigation.goBack()}> 
