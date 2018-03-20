@@ -10,7 +10,6 @@ import { connect } from 'react-redux'
 import {increment, double} from '%actions'
 import {store} from '%store'
 
-
 export default class HomeScreen extends React.Component {
   render () {
     const {counterValue} = this.props
@@ -32,7 +31,6 @@ export default class HomeScreen extends React.Component {
       </View>
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
