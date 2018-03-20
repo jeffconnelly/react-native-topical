@@ -25,12 +25,11 @@ class AppComponent extends Component<Props> {
     const {counterValue} = this.props
     return <View style={styles.container}>
         <Text style={styles.counterValue}>Topical</Text>
-        <Text style={styles.subHeader}>The most current news on your favorite topics</Text>
+        <Text style={styles.subHeader}>Breaking news on your favorite topics</Text>
         <Text style={styles.button}>Technology</Text>
         <Text style={styles.button}>Health</Text>
         <Text style={styles.button}>Sports</Text>
         <Text style={styles.button}>Science</Text>
-
       </View>
   }
 }
@@ -48,12 +47,13 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   button: {
-    backgroundColor: '#08FF88',
+    backgroundColor: '#00755e',
     padding: 15,
     margin: 10,
     borderRadius: 2,
     width: 150,
     textAlign: 'center',
+    color: 'white'
   },
   subHeader: {
     fontSize: 15,
