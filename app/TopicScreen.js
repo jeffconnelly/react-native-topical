@@ -12,7 +12,7 @@ import {store} from '%store'
 
 export default class DetailsScreen extends React.Component {
   componentDidMount() {
-    console.log('mounted!');
+    // console.log('mounted!');
   }
 
   render() {

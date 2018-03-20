@@ -1,21 +1,22 @@
 import types from './actionTypes'
 // import initialState from './initialState'
 
+import {
+  FETCH_ARTICLES_SUCCESS
+} from './actions';
+
 const initialState = {
-  counter: {
-    value: 0,
-  }
+  articles: null
 };
 
-function counterReducer (state, action) {
-  const { type } = action
-  switch (type) {
-    case types.INCREMENT:
-      return { ...state, value: state.value + 1 }
-    case types.DOUBLE:
-      return { ...state, value: state.value * 2 }
-    case types.RESET:
-      return { ...state, value: 0 }
+function newsReducer (state=initialState, action) {
+  switch (action.type) {
+    case FETCH_ARTICLES_SUCCESS:
+    console.log(action.articles.articles);
+      return { 
+        ...state, 
+        articles: action.articles.articles
+      }
     default:
       return state
   }
@@ -23,6 +24,6 @@ function counterReducer (state, action) {
 
 export function rootReducer (state = initialState, action) {
   return {
-    counter: counterReducer(state.counter, action),
+    counter: newsReducer(state.counter, action),
   }
 }

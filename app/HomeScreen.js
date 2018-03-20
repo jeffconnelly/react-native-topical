@@ -7,32 +7,46 @@ import {
   View,
 } from 'react-native';
 import { connect } from 'react-redux'
-import {increment, double} from '%actions'
+import {fetchTopicNews} from '%actions'
 import {store} from '%store'
 
-export default class HomeScreen extends React.Component {
+export class HomeScreen extends React.Component {
 
   render () {
-    onButtonClick = function(event) {
-      // this.props.navigation.navigate('Details');
+    onButtonClickTech = function(event) {
       this.props.navigation.navigate('Details');
-      console.log('Technology');
+      this.props.fetchTopicNews('technology');
+    }
+
+    onButtonClickHealth = function(event) {
+      this.props.navigation.navigate('Details');
+      this.props.fetchTopicNews('health');
+    }
+
+    onButtonClickSports = function(event) {
+      this.props.navigation.navigate('Details');
+      console.log('sports');
+    }
+
+    onButtonClickScience = function(event) {
+      this.props.navigation.navigate('Details');
+      console.log('science');
     }
 
     const {counterValue} = this.props
     return <View style={styles.container}>
         <Text style={styles.header}>Topical</Text>
         <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
-        <TouchableOpacity onPress={onButtonClick.bind(this)}>
+        <TouchableOpacity onPress={onButtonClickTech.bind(this)}>
         <Text style={styles.button}>Technology</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
+        <TouchableOpacity onPress={onButtonClickHealth.bind(this)}>
         <Text style={styles.button}>Health</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
+        <TouchableOpacity onPress={onButtonClickSports.bind(this)}>
         <Text style={styles.button}>Sports</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}> 
+        <TouchableOpacity onPress={onButtonClickScience.bind(this)}> 
         <Text style={styles.button}>Science</Text>
         </TouchableOpacity>
       </View>
@@ -66,3 +80,9 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
 });
+
+const mapDispatchToProps = {
+  fetchTopicNews
+}
+
+export default connect(null, mapDispatchToProps)(HomeScreen)
