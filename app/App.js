@@ -3,6 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import { StackNavigator } from 'react-navigation';
 
 import React, { Component } from 'react';
 import {
@@ -13,11 +14,10 @@ import {
   View,
 } from 'react-native';
 import { connect } from 'react-redux'
-
 import {increment, double} from '%actions'
 import {store} from '%store'
 
-
+//App1 is current version of landing page.
 type Props = {};
 
 class AppComponent extends Component<Props> {
@@ -25,11 +25,19 @@ class AppComponent extends Component<Props> {
     const {counterValue} = this.props
     return <View style={styles.container}>
         <Text style={styles.counterValue}>Topical</Text>
-        <Text style={styles.subHeader}>Breaking news on your favorite topics</Text>
+        <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
         <Text style={styles.button}>Technology</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
         <Text style={styles.button}>Health</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
         <Text style={styles.button}>Sports</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}> 
         <Text style={styles.button}>Science</Text>
+        </TouchableOpacity>
       </View>
   }
 }
@@ -61,24 +69,35 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapDispatchToProps = {
-  increment,
-  double,
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => this.props.navigation.goBack()}> 
+        <Text>Go Back</Text>
+        </TouchableOpacity>
+        <Text>This is the topic details page</Text>
+      </View>
+    );
+  }
 }
 
-const mapStateToProps = state => ({
-  counterValue: state.counter.value,
-})
+const RootStack = StackNavigator(  
+  {
+    Home: {
+      screen: AppComponent,
+    },
+    Details: {
+      screen: DetailsScreen,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
 
-export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
-
-
-// <Text style={styles.counterValue}>
-//           Counter value is {counterValue}
-//         </Text>
-//         <TouchableOpacity onPress={() => this.props.increment()}>
-//           <Text style={styles.button}>Increment</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity onPress={() => this.props.double()}>
-//           <Text style={styles.button}>Double</Text>
-//         </TouchableOpacity>
+export class App extends React.Component {
+  render() {
+    return <RootStack />;
+  }
+}

@@ -3,7 +3,8 @@ import { Provider } from 'react-redux'
 
 import { configureStore } from '%store'
 
-import { App } from './App'
+import { App2, App } from './App'
+
 
 export default class Root extends Component {
   constructor () {
