@@ -12,9 +12,10 @@ import {store} from '%store'
 
 export default class HomeScreen extends React.Component {
   render () {
+    console.log('stuff')
     const {counterValue} = this.props
     return <View style={styles.container}>
-        <Text style={styles.counterValue}>Topical</Text>
+        <Text style={styles.header}>Topical</Text>
         <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
         <Text style={styles.button}>Technology</Text>
@@ -39,10 +40,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  counterValue: {
-    fontSize: 35,
+  header: {
+    fontSize: 40,
     textAlign: 'center',
     margin: 10,
+  },
+  subHeader: {
+    fontSize: 15,
+    margin: 5
   },
   button: {
     backgroundColor: '#00755e',
@@ -51,10 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     width: 150,
     textAlign: 'center',
-    color: 'white'
+    color: 'white',
+    fontSize: 18
   },
-  subHeader: {
-    fontSize: 15,
-    margin: 5
-  }
 });

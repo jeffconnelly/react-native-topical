@@ -1,5 +1,11 @@
 import types from './actionTypes'
-import initialState from './initialState'
+// import initialState from './initialState'
+
+const initialState = {
+  counter: {
+    value: 0,
+  }
+};
 
 function counterReducer (state, action) {
   const { type } = action

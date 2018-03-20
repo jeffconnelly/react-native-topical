@@ -11,6 +11,10 @@ import { connect } from 'react-redux'
 import {store} from '%store'
 
 export default class DetailsScreen extends React.Component {
+  componentDidMount() {
+    console.log('mounted!');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -22,7 +26,6 @@ export default class DetailsScreen extends React.Component {
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {

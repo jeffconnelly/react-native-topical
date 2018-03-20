@@ -7,7 +7,7 @@
 import { StackNavigator } from 'react-navigation';
 import React, { Component } from 'react';
 import HomeScreen from './HomeScreen';
-import DetailsScreen from './DetailsScreen';
+import TopicScreen from './TopicScreen';
 import {
   Platform,
   StyleSheet,
@@ -65,7 +65,7 @@ const RootStack = StackNavigator(
       screen: HomeScreen,
     },
     Details: {
-      screen: DetailsScreen,
+      screen: TopicScreen,
     },
   },
   {
