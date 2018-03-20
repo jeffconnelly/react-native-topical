@@ -25,12 +25,12 @@ export class HomeScreen extends React.Component {
 
     onButtonClickSports = function(event) {
       this.props.navigation.navigate('Details');
-      console.log('sports');
+      this.props.fetchTopicNews('sports');
     }
 
     onButtonClickScience = function(event) {
       this.props.navigation.navigate('Details');
-      console.log('science');
+      this.props.fetchTopicNews('science');
     }
 
     const {counterValue} = this.props

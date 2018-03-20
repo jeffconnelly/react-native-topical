@@ -7,14 +7,13 @@ import thunk from 'redux-thunk'
 import { persistStore, autoRehydrate } from 'redux-persist'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { AsyncStorage } from 'react-native'
-
-import { rootReducer } from './reducers'
+import { newsReducer } from './reducers'
 
 const isDebuggingInChrome = global.__DEV__ && !!window.navigator.userAgent
 require('react-devtools-core').connectToDevTools()
 
 export const store = createStore(
-    rootReducer,
+    newsReducer,
     undefined,
     composeWithDevTools(
         applyMiddleware(thunk),

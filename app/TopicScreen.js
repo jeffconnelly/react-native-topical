@@ -10,9 +10,12 @@ import {
 import { connect } from 'react-redux'
 import {store} from '%store'
 
-export default class DetailsScreen extends React.Component {
+
+
+export class TopicScreen extends React.Component {
   componentDidMount() {
     // console.log('mounted!');
+    console.log(this.props.articles);
   }
 
   render() {
@@ -21,7 +24,7 @@ export default class DetailsScreen extends React.Component {
         <TouchableOpacity onPress={() => this.props.navigation.goBack()}> 
         <Text>Go Back</Text>
         </TouchableOpacity>
-        <Text>This is the topic details page</Text>
+        <Text></Text>
       </View>
     );
   }
@@ -53,3 +56,9 @@ const styles = StyleSheet.create({
     margin: 5
   }
 });
+
+const mapStateToProps = state => ({
+  articles: state.articles,
+});
+
+export default connect(mapStateToProps)(TopicScreen);

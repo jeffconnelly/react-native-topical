@@ -26,7 +26,6 @@ export const fetchTopicNews = category => dispatch => {
   return res.json();
   })
   .then(articles => {
-    console.log(articles);
     dispatch(fetchArticlesSuccess(articles))
   })
 };
