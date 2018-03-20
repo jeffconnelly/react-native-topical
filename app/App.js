@@ -24,16 +24,13 @@ class AppComponent extends Component<Props> {
   render () {
     const {counterValue} = this.props
     return <View style={styles.container}>
-        <Text>Topical</Text>
-        <Text style={styles.counterValue}>
-          Counter value is {counterValue}
-        </Text>
-        <TouchableOpacity onPress={() => this.props.increment()}>
-          <Text style={styles.button}>Increment</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.double()}>
-          <Text style={styles.button}>Double</Text>
-        </TouchableOpacity>
+        <Text style={styles.counterValue}>Topical</Text>
+        <Text style={styles.subHeader}>The most current news on your favorite topics</Text>
+        <Text style={styles.button}>Technology</Text>
+        <Text style={styles.button}>Health</Text>
+        <Text style={styles.button}>Sports</Text>
+        <Text style={styles.button}>Science</Text>
+
       </View>
   }
 }
@@ -46,7 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   counterValue: {
-    fontSize: 20,
+    fontSize: 35,
     textAlign: 'center',
     margin: 10,
   },
@@ -55,9 +52,12 @@ const styles = StyleSheet.create({
     padding: 15,
     margin: 10,
     borderRadius: 2,
-    width: 100,
+    width: 150,
     textAlign: 'center',
   },
+  subHeader: {
+
+  }
 });
 
 const mapDispatchToProps = {
@@ -71,3 +71,13 @@ const mapStateToProps = state => ({
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
 
+
+// <Text style={styles.counterValue}>
+//           Counter value is {counterValue}
+//         </Text>
+//         <TouchableOpacity onPress={() => this.props.increment()}>
+//           <Text style={styles.button}>Increment</Text>
+//         </TouchableOpacity>
+//         <TouchableOpacity onPress={() => this.props.double()}>
+//           <Text style={styles.button}>Double</Text>
+//         </TouchableOpacity>
