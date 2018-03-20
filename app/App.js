@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   subHeader: {
-
+    fontSize: 15,
+    margin: 5
   }
 });
 
