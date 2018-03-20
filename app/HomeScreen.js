@@ -11,13 +11,19 @@ import {increment, double} from '%actions'
 import {store} from '%store'
 
 export default class HomeScreen extends React.Component {
+
   render () {
-    console.log('stuff')
+    onButtonClick = function(event) {
+      // this.props.navigation.navigate('Details');
+      this.props.navigation.navigate('Details');
+      console.log('Technology');
+    }
+
     const {counterValue} = this.props
     return <View style={styles.container}>
         <Text style={styles.header}>Topical</Text>
         <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
+        <TouchableOpacity onPress={onButtonClick.bind(this)}>
         <Text style={styles.button}>Technology</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
