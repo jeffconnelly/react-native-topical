@@ -14,15 +14,15 @@ export function newsReducer (state=initialState, action) {
   switch (action.type) {
     case FETCH_ARTICLES_SUCCESS:
     // console.log(action.articles.articles);
-    let imgArray = action.articles.articles.filter(article => article.urlToImage !== null);
-    // console.log('img Array is', imgArray);
-    let httpsString = 'https://';
-    imgArray.forEach(function(article) {
-      article.urlToImage.replace('http://', httpsString);
-      console.log(article.urlToImage);
-      return article;
-    });
-    console.log('img Array is', imgArray);
+    let imgArray = action.articles.articles.filter(article => article.urlToImage !== null && !article.urlToImage.includes('http://'));
+    // let httpsString = 'https://';
+    // imgArray2 = imgArray.map(function(article) {
+    //   let newHttp = article.urlToImage.replace('http://', httpsString);
+    //   console.log(newHttp);
+    //   article.urlToImage = newHttp;
+    //   console.log(article);
+    //   return article;
+    // });
       return { 
         ...state, 
         articles: imgArray
