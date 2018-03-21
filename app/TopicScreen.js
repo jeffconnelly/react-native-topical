@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
   }
 });
 
-
 const mapDispatchToProps = {
   fetchTopicNews
 }
