@@ -46,19 +46,6 @@ const styles = StyleSheet.create({
   }
 });
 
-// class DetailsScreen extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <TouchableOpacity onPress={() => this.props.navigation.goBack()}> 
-//         <Text>Go Back</Text>
-//         </TouchableOpacity>
-//         <Text>This is the topic details page</Text>
-//       </View>
-//     );
-//   }
-// }
-
 const RootStack = StackNavigator(  
   {
     Home: {

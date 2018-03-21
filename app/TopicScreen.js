@@ -18,12 +18,10 @@ import {fetchTopicNews} from '%actions'
 export class TopicScreen extends React.Component {
   componentDidMount() {
     // console.log('mount info is:', this.props.articles);
-    // console.log(this.props.navigation.state.params.topic);
     this.props.fetchTopicNews(this.props.navigation.state.params.topic);
   }
 
   render() {
-    // console.log('render info is:', this.props.articles);
     return (
       <ScrollView style={styles.container}>
       <FlatList
