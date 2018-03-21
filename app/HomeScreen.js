@@ -13,7 +13,7 @@ import {store} from '%store'
 export class HomeScreen extends React.Component {
 
   render () {
-    let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Business'];
+    let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Business', 'Politics'];
     let newTopicArray = topicArray.map((topic, index) => <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate({
       routeName: 'Details',
       params: {topic}
@@ -36,7 +36,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#8ffffd',
+    // color: 'rgb(0, 122, 255)'
     backgroundColor: '#F5FCFF',
+    marginBottom: 50
   },
   header: {
     fontSize: 40,
@@ -45,17 +48,20 @@ const styles = StyleSheet.create({
   },
   subHeader: {
     fontSize: 15,
-    margin: 5
+    margin: 5,
   },
   button: {
-    backgroundColor: '#00755e',
     padding: 15,
     margin: 10,
-    borderRadius: 2,
+    backgroundColor: '#64c5a5',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#fff',
     width: 150,
     textAlign: 'center',
     color: 'white',
-    fontSize: 18
+    fontSize: 18,
+    overflow: 'hidden'
   },
 });
 
