@@ -6,17 +6,19 @@ import {
 } from './actions';
 
 const initialState = {
-  articles: ['test']
+  articles: null,
+  savedArticles: null
 };
 
 export function newsReducer (state=initialState, action) {
   switch (action.type) {
     case FETCH_ARTICLES_SUCCESS:
     console.log(action.articles.articles);
-    // console.log(state.articles);
+    let imgArray = action.articles.articles.filter(article => article.urlToImage !== null);
+    console.log(imgArray);
       return { 
         ...state, 
-        articles: action.articles.articles
+        articles: imgArray
       }
     default: return state
   }

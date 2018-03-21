@@ -6,37 +6,39 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Image
+  Image,
+  ScrollView,
+  FlatList
 } from 'react-native';
 import { connect } from 'react-redux'
 import {store} from '%store'
-
+import {fetchTopicNews} from '%actions'
 
 
 export class TopicScreen extends React.Component {
-  componentDidUpdate() {
-    console.log('mount info is:', this.props.articles);
-}
+  componentDidMount() {
+    // console.log('mount info is:', this.props.articles);
+    // console.log(this.props.navigation.state.params.topic);
+    this.props.fetchTopicNews(this.props.navigation.state.params.topic);
+  }
 
   render() {
-    const articles = this.props.articles.map((article, index) => (
-      <View key={index}>
-      <Text>{article.title}</Text>
-      <Image
-        style={{width: 50, height: 50}}
-        source={{uri: `${article.urlToImage}`}}
-      />
-      </View>
-  ));
-   
-    console.log('render info is:', this.props.articles);
+    // console.log('render info is:', this.props.articles);
     return (
-      <View style={styles.container}>
-        <TouchableOpacity onPress={() => this.props.navigation.goBack()}> 
-        <Text>Go Back</Text>
+      <ScrollView style={styles.container}>
+      <FlatList
+      data={this.props.articles}
+      renderItem={({item}) => (
+        <TouchableOpacity style={styles.articleContainer}>
+        <Image
+          style={{width: 400, height: 150}}
+          source={{uri: `${item.urlToImage}`}}
+        />
+        <Text style={styles.newsline}>{item.title}</Text>
         </TouchableOpacity>
-        {articles}
-      </View>
+      )}
+      />
+      </ScrollView>
     );
   }
 }
@@ -44,14 +46,10 @@ export class TopicScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  counterValue: {
-    fontSize: 35,
-    textAlign: 'center',
-    margin: 10,
+  articleContainer: {
+    margin: 5
   },
   button: {
     backgroundColor: '#00755e',
@@ -62,14 +60,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white'
   },
-  subHeader: {
+  newsline: {
     fontSize: 15,
-    margin: 5
+    marginTop: 5,
   }
 });
+
+
+const mapDispatchToProps = {
+  fetchTopicNews
+}
 
 const mapStateToProps = state => ({
   articles: state.articles,
 });
 
-export default connect(mapStateToProps)(TopicScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(TopicScreen);

@@ -18,7 +18,9 @@ export const fetchArticlesSuccess = articles => ({
 });
 
 export const fetchTopicNews = category => dispatch => {
-  fetch(`${API_BASE_URL}${category}&apiKey=${apiKey}`)
+  console.log('Action topic is:', category);
+  let newCategory = category.toLowerCase();
+  fetch(`${API_BASE_URL}${newCategory}&apiKey=${apiKey}`)
   .then(res => {
     if (!res.ok) {
     return Promise.reject(res.statusText);

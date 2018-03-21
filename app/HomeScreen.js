@@ -13,42 +13,20 @@ import {store} from '%store'
 export class HomeScreen extends React.Component {
 
   render () {
-    onButtonClickTech = function(event) {
-      this.props.navigation.navigate('Details');
-      this.props.fetchTopicNews('technology');
-    }
-
-    onButtonClickHealth = function(event) {
-      this.props.navigation.navigate('Details');
-      this.props.fetchTopicNews('health');
-    }
-
-    onButtonClickSports = function(event) {
-      this.props.navigation.navigate('Details');
-      this.props.fetchTopicNews('sports');
-    }
-
-    onButtonClickScience = function(event) {
-      this.props.navigation.navigate('Details');
-      this.props.fetchTopicNews('science');
-    }
+    let topicArray = ['Technology', 'Health', 'Sports', 'Science'];
+    let newTopicArray = topicArray.map((topic, index) => <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate({
+      routeName: 'Details',
+      params: {topic}
+        })}>
+      <Text style ={styles.button}>{topic}</Text>
+      </TouchableOpacity>
+    ); 
 
     const {counterValue} = this.props
     return <View style={styles.container}>
         <Text style={styles.header}>Topical</Text>
         <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
-        <TouchableOpacity onPress={onButtonClickTech.bind(this)}>
-        <Text style={styles.button}>Technology</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onButtonClickHealth.bind(this)}>
-        <Text style={styles.button}>Health</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onButtonClickSports.bind(this)}>
-        <Text style={styles.button}>Sports</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onButtonClickScience.bind(this)}> 
-        <Text style={styles.button}>Science</Text>
-        </TouchableOpacity>
+        {newTopicArray}
       </View>
   }
 }
