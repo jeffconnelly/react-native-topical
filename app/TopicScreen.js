@@ -13,9 +13,17 @@ import {
 import { connect } from 'react-redux'
 import {store} from '%store'
 import {fetchTopicNews} from '%actions'
-
+import {stackNavigator} from 'react-navigation';
 
 export class TopicScreen extends React.Component {
+  static navigationOptions = ({navigation}) =>
+  {
+    const { params } = navigation.state;
+  return {
+    title: params.topic
+  }
+};
+
   componentDidMount() {
     // console.log('mount info is:', this.props.articles);
     this.props.fetchTopicNews(this.props.navigation.state.params.topic);
@@ -29,12 +37,14 @@ export class TopicScreen extends React.Component {
       renderItem={({item}) => (
         <TouchableOpacity style={styles.articleContainer}>
         <Image
-          style={{width: 400, height: 150}}
+          style={styles.imageStyle}
           source={{uri: `${item.urlToImage}`}}
+          resizeMode='stretch'
         />
         <Text style={styles.newsline}>{item.title}</Text>
         </TouchableOpacity>
       )}
+      keyExtractor={(item, index) => index}
       />
       </ScrollView>
     );
@@ -47,7 +57,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   articleContainer: {
-    margin: 5
+    margin: 10,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
     backgroundColor: '#00755e',
@@ -59,8 +72,15 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   newsline: {
-    fontSize: 15,
+    fontSize: 18,
     marginTop: 5,
+    marginBottom: 5,
+    textAlign: 'center', 
+   
+  },
+  imageStyle: {
+    width: 375,
+    height: 160,
   }
 });
 
@@ -74,3 +94,8 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopicScreen);
+
+ 
+    // borderRadius: 4,
+    // borderWidth: 0.5,
+    // borderColor: '#00755e',
