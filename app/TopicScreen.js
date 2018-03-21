@@ -25,7 +25,6 @@ export class TopicScreen extends React.Component {
 };
 
   componentDidMount() {
-    // console.log('mount info is:', this.props.articles);
     this.props.fetchTopicNews(this.props.navigation.state.params.topic);
   }
 
@@ -35,7 +34,10 @@ export class TopicScreen extends React.Component {
       <FlatList
       data={this.props.articles}
       renderItem={({item}) => (
-        <TouchableOpacity style={styles.articleContainer}>
+        <TouchableOpacity style={styles.articleContainer}  onPress={() => this.props.navigation.navigate({
+          routeName: 'Article',
+          params: {item}
+            })}>
         <Image
           style={styles.imageStyle}
           source={{uri: `${item.urlToImage}`}}
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     textAlign: 'center', 
-   
   },
   imageStyle: {
     width: 375,
@@ -93,8 +94,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopicScreen);
-
- 
-    // borderRadius: 4,
-    // borderWidth: 0.5,
-    // borderColor: '#00755e',

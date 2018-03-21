@@ -1,6 +1,3 @@
-import types from './actionTypes'
-// import initialState from './initialState'
-
 import {
   FETCH_ARTICLES_SUCCESS
 } from './actions';
@@ -13,7 +10,6 @@ const initialState = {
 export function newsReducer (state=initialState, action) {
   switch (action.type) {
     case FETCH_ARTICLES_SUCCESS:
-    // console.log(action.articles.articles);
     let imgArray = action.articles.articles.filter(article => article.urlToImage !== null && !article.urlToImage.includes('http://'));
     // let httpsString = 'https://';
     // imgArray2 = imgArray.map(function(article) {
