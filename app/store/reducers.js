@@ -28,9 +28,3 @@ export function newsReducer (state=initialState, action) {
 }
 
 export default newsReducer;
-
-// export function rootReducer (state = initialState, action) {
-//   return {
-//     articles: newsReducer(state.articles, action),
-//   }
-// }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {
   Platform,
   StyleSheet,
@@ -15,20 +14,16 @@ import { connect } from 'react-redux'
 import {store} from '%store'
 import {stackNavigator} from 'react-navigation';
 
-
 export default class ArticleScreen extends React.Component {
 
   componentDidMount() {
     console.log(this.props.navigation.state.params.item);
   }
 
-
   render() {
     let article = this.props.navigation.state.params.item;
-
     let publishDate = article.publishedAt.slice(0, 10);
-    console.log(article);
-    console.log(publishDate);
+
     return (
       <View style={styles.container}>
       <Text style={styles.newsHeader}>{article.title}</Text>
@@ -54,8 +49,8 @@ const styles = StyleSheet.create({
   },
   newsHeader: {
     fontSize: 18,
-    marginTop: 15,
-    marginBottom: 15,
+    marginTop: 20,
+    marginBottom: 20,
     textAlign: 'center', 
     fontWeight: 'bold',
     marginLeft: 15,
@@ -83,6 +78,7 @@ const styles = StyleSheet.create({
     width: 340,
     alignSelf: 'center',
     height: 250,
+    marginBottom: 5
   }
 });
 

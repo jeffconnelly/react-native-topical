@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {
   Platform,
   StyleSheet,
@@ -18,7 +17,7 @@ import {stackNavigator} from 'react-navigation';
 export class TopicScreen extends React.Component {
   static navigationOptions = ({navigation}) =>
   {
-    const { params } = navigation.state;
+  const { params } = navigation.state;
   return {
     title: params.topic
   }
@@ -29,6 +28,7 @@ export class TopicScreen extends React.Component {
   }
 
   render() {
+    
     return (
       <ScrollView style={styles.container}>
       <FlatList
