@@ -25,7 +25,10 @@ export default class ArticleScreen extends React.Component {
 
   render() {
     let article = this.props.navigation.state.params.item;
+
+    let publishDate = article.publishedAt.slice(0, 10);
     console.log(article);
+    console.log(publishDate);
     return (
       <View style={styles.container}>
       <Text style={styles.newsHeader}>{article.title}</Text>
@@ -35,12 +38,12 @@ export default class ArticleScreen extends React.Component {
       resizeMode='stretch'
       />
       <Text style={styles.newsAuthor} onPress={() => Linking.openURL(`${article.url}`)}>{article.source.name}</Text>
+      <Text style={styles.publishText}>{article.author} {publishDate}</Text>
       <Text style={styles.newsText}>{article.description}</Text>
       </View>
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -48,34 +51,36 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   articleContainer: {
-    margin: 10,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   newsHeader: {
     fontSize: 18,
     marginTop: 15,
     marginBottom: 15,
     textAlign: 'center', 
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginLeft: 15,
+    marginRight: 15
   },
   newsAuthor: {
     fontSize: 18,
     marginTop: 10,
-    marginLeft: 10,
+    marginLeft: 15,
+    marginRight: 15,
     color: 'rgb(0, 122, 255)'
   },
   newsText: {
     fontSize: 15,
     marginTop: 10,
-    marginBottom: 20,
-    marginLeft: 10,
+    marginLeft: 15,
+    marginRight: 15,
     fontStyle: 'italic'
   },
+  publishText:{
+    marginLeft: 15,
+    marginRight: 15,
+  },
   imageStyle: {
-    // flex: 1,
-    width: 350,
+    width: 340,
     alignSelf: 'center',
     height: 250,
   }
