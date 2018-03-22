@@ -16,11 +16,11 @@ import {stackNavigator} from 'react-navigation';
 
 export class HomeScreen extends React.Component {
 
-  static navigationOptions = { title: 'Welcome', header: { visible:false } };
+static navigationOptions = { title: 'Home', header: null };
 
   render () {
-    let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Politics', 'Entertainment'];
-    let newTopicArray = topicArray.map((topic, index) => <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate({
+    let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Politics', 'Entertainment', 'Politics', 'General'];
+    let newTopicArray = topicArray.map((topic, index) => <TouchableOpacity style={styles.topicWrapper} key={index} onPress={() => this.props.navigation.navigate({
       routeName: 'Details',
       params: {topic}
         })}>
@@ -35,7 +35,9 @@ export class HomeScreen extends React.Component {
       <View style={styles.overlay}/>
       <Text style={styles.header}>Topical</Text>
       <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
+      <Text style={styles.buttonWrapper}>
       {newTopicArray}
+      </Text>
       </ImageBackground>
       </View>
     );
@@ -57,30 +59,31 @@ const styles = StyleSheet.create({
     width: null,
     height: null,
     },
-    overlay: {
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      opacity: 0.7
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    opacity: 0.7
     },
   header: {
     fontSize: 50,
     textAlign: 'center',
-    // margin: 10,
     fontWeight: '300',
     fontFamily: 'Noteworthy'
   },
   subHeader: {
     fontSize: 20,
-    margin: 10,
+    marginBottom: 20,
+    marginTop: 4,
     fontFamily: 'Avenir-Light'
   },
   button: {
     padding: 15,
     margin: 10,
+    marginTop: 20,
     backgroundColor: '#64c5a5',
     borderRadius: 10,
     borderWidth: 2,
@@ -91,6 +94,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     overflow: 'hidden',
   },
+  buttonWrapper: {
+    marginBottom: 80
+  },
+  topicWrapper: {
+    marginTop: 12
+  }
 });
 
 const mapDispatchToProps = {
