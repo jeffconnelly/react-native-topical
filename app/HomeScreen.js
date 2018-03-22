@@ -11,8 +11,12 @@ import {
 import { connect } from 'react-redux'
 import {fetchTopicNews} from '%actions'
 import {store} from '%store'
+import {stackNavigator} from 'react-navigation';
+
 
 export class HomeScreen extends React.Component {
+
+  static navigationOptions = { title: 'Welcome', header: { visible:false } };
 
   render () {
     let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Politics', 'Entertainment'];
