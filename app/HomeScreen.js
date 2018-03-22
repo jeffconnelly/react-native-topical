@@ -12,7 +12,7 @@ import { connect } from 'react-redux'
 import {fetchTopicNews} from '%actions'
 import {store} from '%store'
 import {stackNavigator} from 'react-navigation';
-
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export class HomeScreen extends React.Component {
 
@@ -28,6 +28,8 @@ static navigationOptions = { title: 'Home', header: null };
       </TouchableOpacity>
     ); 
 
+    const myIcon = (<Icon name="beach" size={40} color='#64c5a5' />);
+
     const {counterValue} = this.props
     return (
       <View style={styles.container}>
@@ -38,6 +40,7 @@ static navigationOptions = { title: 'Home', header: null };
       <Text style={styles.buttonWrapper}>
       {newTopicArray}
       </Text>
+      {myIcon}
       </ImageBackground>
       </View>
     );
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   buttonWrapper: {
-    marginBottom: 80
+    marginBottom: 35
   },
   topicWrapper: {
     marginTop: 12
