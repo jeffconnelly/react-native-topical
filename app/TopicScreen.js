@@ -32,6 +32,7 @@ export class TopicScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
       <FlatList
+      keyExtractor={(item, index) => item.urlToImage}
       data={this.props.articles}
       renderItem={({item}) => (
         <TouchableOpacity style={styles.articleContainer}  onPress={() => this.props.navigation.navigate({
@@ -46,7 +47,6 @@ export class TopicScreen extends React.Component {
         <Text style={styles.newsline}>{item.title}</Text>
         </TouchableOpacity>
       )}
-      keyExtractor={(item, index) => index}
       />
       </ScrollView>
     );

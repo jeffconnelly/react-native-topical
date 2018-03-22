@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import HomeScreen from './HomeScreen';
 import TopicScreen from './TopicScreen';
 import ArticleScreen from './ArticleScreen';
+import WebView from './WebView';
 import {
   Platform,
   StyleSheet,
@@ -30,6 +31,9 @@ const RootStack = StackNavigator(
     },
     Article: {
       screen: ArticleScreen
+    },
+    WebView: {
+      screen: WebView
     }
   },
   {

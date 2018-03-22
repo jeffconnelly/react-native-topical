@@ -23,7 +23,7 @@ export default class ArticleScreen extends React.Component {
   render() {
     let article = this.props.navigation.state.params.item;
     let publishDate = article.publishedAt.slice(0, 10);
-
+    // let url = article.url;
     return (
       <View style={styles.container}>
       <Text style={styles.newsHeader}>{article.title}</Text>
@@ -32,13 +32,17 @@ export default class ArticleScreen extends React.Component {
       source={{uri: `${article.urlToImage}`}}
       resizeMode='stretch'
       />
-      <Text style={styles.newsAuthor} onPress={() => Linking.openURL(`${article.url}`)}>{article.source.name}</Text>
+      <Text style={styles.newsAuthor}  onPress={() => this.props.navigation.navigate({
+         routeName: 'WebView',
+          params: article.url
+          })}>{article.source.name}</Text>
       <Text style={styles.publishText}>{article.author} {publishDate}</Text>
       <Text style={styles.newsText}>{article.description}</Text>
       </View>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
