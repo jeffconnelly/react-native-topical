@@ -5,6 +5,8 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Image,
+  ImageBackground
 } from 'react-native';
 import { connect } from 'react-redux'
 import {fetchTopicNews} from '%actions'
@@ -23,11 +25,16 @@ export class HomeScreen extends React.Component {
     ); 
 
     const {counterValue} = this.props
-    return <View style={styles.container}>
-        <Text style={styles.header}>Topical</Text>
-        <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
-        {newTopicArray}
+    return (
+      <View style={styles.container}>
+      <ImageBackground source={{uri: 'https://images.unsplash.com/photo-1491378630646-3440efa57c3b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a44ab4cbc7f5ff994d4f3ff93923973a&auto=format&fit=crop&w=500&q=60'}} style={styles.backgroundImage}>
+      <View style={styles.overlay}/>
+      <Text style={styles.header}>Topical</Text>
+      <Text style={styles.subHeader}>Breaking news on your favorite topics!</Text>
+      {newTopicArray}
+      </ImageBackground>
       </View>
+    );
   }
 }
 
@@ -37,23 +44,40 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    marginBottom: 50
   },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    width: null,
+    height: null,
+    },
+    overlay: {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      opacity: 0.7
+    },
   header: {
-    fontSize: 40,
+    fontSize: 50,
     textAlign: 'center',
     margin: 10,
+    fontWeight: '300',
   },
   subHeader: {
-    fontSize: 15,
-    margin: 5,
+    fontSize: 18,
+    margin: 10,
   },
   button: {
     padding: 15,
     margin: 10,
     backgroundColor: '#64c5a5',
     borderRadius: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#fff',
     width: 150,
     textAlign: 'center',
