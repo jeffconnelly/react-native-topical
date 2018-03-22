@@ -54,31 +54,36 @@ const styles = StyleSheet.create({
     textAlign: 'center', 
     fontWeight: 'bold',
     marginLeft: 15,
-    marginRight: 15
+    marginRight: 15,
+    fontFamily: 'AvenirNext-Bold'
   },
   newsAuthor: {
     fontSize: 18,
     marginTop: 10,
     marginLeft: 15,
     marginRight: 15,
-    color: 'rgb(0, 122, 255)'
+    color: 'rgb(0, 122, 255)',
+    fontFamily: 'Avenir'
   },
   newsText: {
     fontSize: 15,
     marginTop: 10,
     marginLeft: 15,
     marginRight: 15,
-    fontStyle: 'italic'
+    fontFamily: 'Avenir'
   },
   publishText:{
     marginLeft: 15,
     marginRight: 15,
+    fontFamily: 'Avenir',
+    fontStyle: 'italic',
   },
   imageStyle: {
     width: 340,
     alignSelf: 'center',
     height: 250,
-    marginBottom: 5
+    marginBottom: 5,
+    borderRadius: 5
   }
 });
 

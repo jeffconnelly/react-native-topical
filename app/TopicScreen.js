@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     textAlign: 'center', 
+    fontFamily: 'Avenir'
   },
   imageStyle: {
     width: 375,
