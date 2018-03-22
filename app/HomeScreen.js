@@ -15,7 +15,7 @@ import {store} from '%store'
 export class HomeScreen extends React.Component {
 
   render () {
-    let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Business', 'Politics'];
+    let topicArray = ['Technology', 'Health', 'Sports', 'Science', 'Business', 'Entertainment'];
     let newTopicArray = topicArray.map((topic, index) => <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate({
       routeName: 'Details',
       params: {topic}
