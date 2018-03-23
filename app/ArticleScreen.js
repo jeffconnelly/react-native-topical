@@ -23,7 +23,6 @@ export default class ArticleScreen extends React.Component {
   render() {
     let article = this.props.navigation.state.params.item;
     let publishDate = article.publishedAt.slice(0, 10);
-    // let url = article.url;
     return (
       <View style={styles.container}>
       <Text style={styles.newsHeader}>{article.title}</Text>
