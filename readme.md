@@ -1,10 +1,18 @@
 # Topical
 Topical is a React Native app that presents breaking news on all your favorite topics, including technology, sports, science, politics, health, and more!
 
-# React Native Flex Week 
-React-Native App with source code for the content covered during the flex week.
+# Features
+Works with News Api to present breaking news on the following topics in a clean, easy to use fashion:
+- Technology
+- Sports
+- Business
+- Health
+- Science
+- Politics
+- Entertainment
+- General
 
- ### Test steps
+ ### Test Steps
 
 1 - Install dependencies by typing `yarn install`
 
