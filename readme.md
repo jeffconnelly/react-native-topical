@@ -1,5 +1,5 @@
 # Topical
--Topical is a React Native app that presents breaking news on all your favorite topics, including technology, sports, science, politics, health, and more!
+Topical is a React Native app that presents breaking news on all your favorite topics, including technology, sports, science, politics, health, and more!
 
 # React Native Flex Week 
 React-Native App with source code for the content covered during the flex week.
