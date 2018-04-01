@@ -26,3 +26,21 @@ Works with News Api to present breaking news on the following topics in a clean,
 
 It's been configured [React Native Developer Tools](https://github.com/jhen0409/react-native-debugger)
 so you are able to log redux state better. 
+
+# Screenshots
+
+> Landing Page
+
+> ![Landing Page](screenshots/topical-home.png "Landing Page")
+
+> Topic Page
+
+> ![Topic Page](screenshots/topical-topic-page.png "Topic Page")
+
+> Article Page
+
+> ![Article Page](screenshots/topical-article-page.png "Article Page")
+
+> WebView Page
+
+> ![WebView Page](screenshots/topical-webview.png "Webview Page")
