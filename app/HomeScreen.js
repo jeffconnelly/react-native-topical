@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir-Light'
   },
   button: {
-    padding: 18,
+    padding: 20,
     margin: 10,
     marginTop: 20,
     backgroundColor: '#64c5a5',
