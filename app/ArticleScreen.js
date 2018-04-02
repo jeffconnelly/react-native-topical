@@ -33,7 +33,7 @@ export default class ArticleScreen extends React.Component {
       />
       <Text style={styles.newsAuthor}  onPress={() => this.props.navigation.navigate({
          routeName: 'WebView',
-          params: article.url
+          params: op
           })}>{article.source.name}</Text>
       <Text style={styles.publishText}>{article.author} {publishDate}</Text>
       <Text style={styles.newsText}>{article.description}</Text>
