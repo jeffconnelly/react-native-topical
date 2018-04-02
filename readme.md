@@ -17,7 +17,7 @@ Uses React Native features such as StackNavigator to quickly shift between page 
 
  ### Test Steps
 
-1 - Install dependencies by typing `yarn install`
+1 - Install dependencies by typing `yarn install or npm install`
 
 2 - Install and launch the app by typing `react-native run-ios`or `react-native run-android`
 
