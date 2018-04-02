@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir-Light'
   },
   button: {
-    padding: 20,
+    padding: 15,
     margin: 10,
     marginTop: 20,
     backgroundColor: '#64c5a5',
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     width: 150,
     textAlign: 'center',
     color: 'white',
-    fontSize: 14,
+    fontSize: 18,
     overflow: 'hidden',
   },
   buttonWrapper: {
